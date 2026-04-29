@@ -6,11 +6,8 @@
   --color-red: #F54932;
   --color-yellow: #FBCE51;
 
-  
   //Bg
   --bg-footer: #E9DED4;
-  --bg-ticker: var(--color-red);
-
 
   //Buttons
   --btn-default: var(--color-dark);
@@ -22,6 +19,9 @@
   --btn-more: var(--color-blue);
   --btn-more-txt: var(--color-white);
 
+  //Ticker
+  --bg-ticker: var(--color-red);
+  --txt-ticker: var(--color-white);
 
   //Typography
   --txt-primary: #313131;

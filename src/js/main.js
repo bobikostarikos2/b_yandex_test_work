@@ -1,0 +1,1 @@
+Ticker.init('.ticker__track')

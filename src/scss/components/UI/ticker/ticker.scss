@@ -1,0 +1,32 @@
+.ticker {
+  --size: 60px;
+  display: flex;
+  align-items: center;
+  height: var(--size);
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-ticker);
+
+  &__track {
+    display: flex;
+    width: max-content;
+    animation: ticker var(--ticker-duration, 40s) linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__item {
+    white-space: nowrap;
+    color: var(--txt-ticker);
+    font-family: var(--font-secondary);
+    line-height: 110%;
+    font-size: 2.2rem;
+  }
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

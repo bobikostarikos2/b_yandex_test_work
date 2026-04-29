@@ -7,6 +7,7 @@ import uglify from 'gulp-uglify'
 import fileInclude from 'gulp-file-include'
 import browserSync from 'browser-sync'
 import prettier from 'gulp-prettier'
+import concat from 'gulp-concat'
 
 const sass = gulpSass(dartSass)
 const bs = browserSync.create()
@@ -32,7 +33,12 @@ const styles = () => {
 
 //JS
 const scripts = () => {
-  return gulp.src('src/js/*.js')
+  return gulp.src([
+    'src/js/utils/*.js',
+    'src/js/components/*.js',
+    'src/js/main.js'
+  ])
+    .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
     .pipe(bs.stream())
