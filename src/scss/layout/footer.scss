@@ -1,0 +1,24 @@
+@use '../base/variables' as *;
+
+.footer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--bg-footer);
+  padding: 40px var(--global-padding) 72px var(--global-padding);
+
+  @media(max-width: $bp-tablet){
+    padding: 40px var(--global-padding-tablet) 72px var(--global-padding-tablet);
+  }
+
+  @media(max-width: $bp-mobile){
+    padding: 40px var(--global-padding-mobile) 72px var(--global-padding-mobile);
+  }
+
+  &__txt{
+    max-width: var(--container-width);
+    color: var(--txt-primary);
+    line-height: 120%;
+    font-weight: 400;
+  }
+}

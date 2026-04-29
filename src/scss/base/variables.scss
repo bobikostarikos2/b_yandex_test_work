@@ -4,6 +4,8 @@
 
   //Секции
   --global-padding: 72px;
+  --global-padding-tablet: 40px;
+  --global-padding-mobile: 20px;
 
   //Радиусы
   --r-btn: 66px;
@@ -16,3 +18,7 @@
   //Транзишены
   --transition-default: 0.2s ease;
 }
+
+//Breakpoints
+$bp-tablet: 768px;
+$bp-mobile: 375px;
