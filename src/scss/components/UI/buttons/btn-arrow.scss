@@ -1,0 +1,26 @@
+.btn-arrow{
+  --size: 44px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--btn-default-txt-light);
+  background-color: var(--btn-default);
+  transition: background-color var(--transition-default);
+
+  svg{
+    transform: translateX(2px);
+  }
+
+  &:hover{
+    background-color: var(--btn-default-hover);
+  }
+
+  &--disabled, &:disabled{
+    background-color: var(--btn-disabled);
+    pointer-events: none;
+  }
+}

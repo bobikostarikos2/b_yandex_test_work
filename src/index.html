@@ -16,6 +16,25 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    ПРИВЕТ шрифты
+    <div style="display: flex; gap: 16px; align-items: center; padding: 100px">
+      <button class="btn" aria-label="Поддержать шахматную мысль" type="button">
+        <span class="btn__txt" aria-hidden="true">Поддержать</span>
+        <span class="btn__txt" aria-hidden="true">шахматную мысль</span>
+      </button>
+      <button class="btn btn--secondary" aria-label="Поддержать шахматную мысль" type="button">
+        <span class="btn__txt" aria-hidden="true">Подробнее</span>
+        <span class="btn__txt" aria-hidden="true">о турнире</span>
+      </button>
+      <button class="btn-arrow" aria-label="Слайд вперед" type="button">
+        @@include('html/svg/arrow.html')
+      </button>
+      <button class="btn-arrow btn-arrow--disabled" aria-label="Слайд назад" type="button">
+        @@include('html/svg/arrow.html')
+      </button>
+      <button class="btn-more" aria-label="Поддержать шахматную мысль" type="button">
+        Подробнее
+      </button>
+    </div>
+    
   </body>
 </html>

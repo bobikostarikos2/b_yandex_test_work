@@ -13,7 +13,10 @@ const bs = browserSync.create()
 //HTML
 const html = () => {
   return gulp.src('src/*.html')
-    .pipe(fileInclude({ prefix: '@@', basepath: '@file' }))
+    .pipe(fileInclude({ 
+      prefix: '@@',
+      basepath: 'src'
+    }))
     .pipe(gulp.dest('dist'))
     .pipe(bs.stream())
 }

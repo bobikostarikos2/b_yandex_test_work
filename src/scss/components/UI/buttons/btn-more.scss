@@ -1,0 +1,18 @@
+.btn-more{
+  --size: 35px;
+  display: flex;
+  align-items: center;
+  height: var(--size);
+  padding: 12px;
+  font-weight: 500;
+  box-shadow: inset 0 0 0 1px var(--btn-more);
+  color: var(--btn-more);
+  border-radius: var(--r-btn-more);
+  line-height: 100%;
+  transition: color var(--transition-default), background-color var(--transition-default);
+
+  &:hover{
+    color: var(--btn-more-txt);
+    background-color: var(--btn-more);
+  }
+}
