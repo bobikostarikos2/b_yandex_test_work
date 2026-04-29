@@ -6,6 +6,7 @@ import cssnano from 'gulp-cssnano'
 import uglify from 'gulp-uglify'
 import fileInclude from 'gulp-file-include'
 import browserSync from 'browser-sync'
+import prettier from 'gulp-prettier'
 
 const sass = gulpSass(dartSass)
 const bs = browserSync.create()
@@ -13,10 +14,8 @@ const bs = browserSync.create()
 //HTML
 const html = () => {
   return gulp.src('src/*.html')
-    .pipe(fileInclude({ 
-      prefix: '@@',
-      basepath: 'src'
-    }))
+    .pipe(fileInclude({ prefix: '@@', basepath: 'src' }))
+    .pipe(prettier({ parser: 'html' }))
     .pipe(gulp.dest('dist'))
     .pipe(bs.stream())
 }
