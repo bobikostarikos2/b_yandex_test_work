@@ -1,0 +1,14 @@
+.text-heading {
+  font-family: var(--font-secondary);
+  font-size: clamp(2.8rem, 2.7vw, 3.6rem);
+  line-height: 135%;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--txt-primary);
+
+  &__accent{
+    color: var(--txt-accent);
+    font-weight: 600;
+    font-style: normal;
+  }
+}

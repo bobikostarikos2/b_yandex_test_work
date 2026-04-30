@@ -4,6 +4,7 @@
 
   //Секции
   --global-padding: 72px;
+  --global-padding-laptop: 50px;
   --global-padding-tablet: 40px;
   --global-padding-mobile: 20px;
 
@@ -20,5 +21,6 @@
 }
 
 //Breakpoints
+$bp-laptop: 1024px;
 $bp-tablet: 768px;
-$bp-mobile: 375px;
+$bp-mobile: 576px;

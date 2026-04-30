@@ -1,3 +1,5 @@
+@use '../../../base/variables' as *;
+
 .ticker {
   --size: 60px;
   display: flex;
@@ -6,6 +8,10 @@
   width: 100%;
   overflow: hidden;
   background-color: var(--bg-ticker);
+
+  @media(max-width: $bp-laptop){
+    --size: 38px;
+  }
 
   &__track {
     display: flex;
@@ -23,6 +29,10 @@
     font-family: var(--font-secondary);
     line-height: 110%;
     font-size: 2.2rem;
+
+    @media(max-width: $bp-laptop){
+      font-size: 1.6rem;
+    }
   }
 }
 
