@@ -4,6 +4,9 @@
   display: flex;
   justify-content: center;
   padding: 80px var(--global-padding) 64px var(--global-padding);
+  background-color: var(--bg-body);
+  z-index: 2;
+  position: relative;
 
   @media(max-width: $bp-laptop){
     padding: 48px var(--global-padding-laptop) 34px var(--global-padding-laptop);
@@ -57,6 +60,7 @@
       font-size: clamp(2.4rem, 3.8vw, 3.6rem);
 
       &[data-lecture-part="1"] {
+        align-self: start;
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }

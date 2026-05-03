@@ -1,16 +1,18 @@
 @use '../../../base/variables' as *;
 
 .ticker {
-  --size: 60px;
+  --size: var(--ticker-h);
   display: flex;
   align-items: center;
   height: var(--size);
   width: 100%;
   overflow: hidden;
   background-color: var(--bg-ticker);
+  z-index: 10;
+  position: relative;
 
   @media(max-width: $bp-laptop){
-    --size: 38px;
+    --size: var(--ticker-h-adaptive);
   }
 
   &__track {

@@ -46,7 +46,7 @@ const scripts = () => {
 
 //Images
 const images = () => {
-  return gulp.src('src/assets/**/*')
+  return gulp.src('src/assets/**/*', { encoding: false })
     .pipe(gulp.dest('dist/assets'))
 }
 

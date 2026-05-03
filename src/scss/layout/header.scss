@@ -1,0 +1,213 @@
+@use '../base/variables' as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - var(--ticker-h));
+  max-height: 800px;
+  background-image: url('../assets/bg_main.webp');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  @media (max-width: $bp-mobile) {
+    min-height: 800px;
+    height: calc(100vh - var(--ticker-h));
+  }
+
+  &__box{
+    position: absolute;
+    width: 100%;
+    max-width: calc(var(--container-width) + var(--global-padding) * 2);
+    z-index: 12;
+    padding: 26px var(--global-padding) 0 var(--global-padding);
+    
+    @media(max-width: $bp-laptop){
+      max-width: 100%;
+      padding: 26px var(--global-padding-laptop) 0 var(--global-padding-laptop);
+    }
+
+    @media (max-width: $bp-tablet) {
+      padding: 20px var(--global-padding-tablet) 0 var(--global-padding-tablet);
+    }
+
+    @media (max-width: $bp-mobile) {
+      padding: 26px var(--global-padding-mobile) 0 var(--global-padding-mobile);
+    }
+  }
+
+  &__ttl{
+    color: var(--txt-primary);
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 6rem;
+    max-width: 542px;
+    width: 100%;
+    line-height: 110%;
+    padding: 60px 0 0 0;
+
+    @media (max-width: $bp-tablet) {
+      font-size: clamp(3.6rem, 8.5vw, 5.6rem);
+      padding: 40px 0 0 0;
+      max-width: 510px;
+    }
+  }
+
+  &__ttl-part{
+    display: block;
+    width: 100%;
+
+    &--center{
+      text-align: center;
+    }
+  }
+  
+  &__slogan{
+    display: block;
+    color: var(--txt-primary);
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 130%;
+    text-align: center;
+    max-width: 542px;
+    width: 100%;
+    padding: 24px 0 0 0;
+
+    @media (max-width: $bp-mobile) {
+      text-align: left;
+    }
+  }
+
+  &__btns{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 0 0 0;
+
+    @media (max-width: $bp-tablet) {
+      flex-direction: column;
+      gap: 14px;
+      padding: 32px 0 0 0;
+    }
+  }
+
+  &__btn{
+    max-width: 263px;
+
+    @media (max-width: $bp-tablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__group{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media(max-width: $bp-laptop){
+    height: calc(100vh - var(--ticker-h-adaptive));
+  }
+
+  &__city{
+    position: absolute;
+    bottom: 0;
+    z-index: 6;
+    max-width: 1627px;
+
+    @media (max-width: $bp-laptop) {
+      transform: translateX(100px);
+    }
+
+    @media (max-width: $bp-mobile) {
+      max-width: 885px;
+      transform: translateX(-140px);
+    }
+  }
+
+  &__ellipse{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    transform: translate(310px, -410px) scale(.5);
+
+    @media (max-width: $bp-laptop) {
+      transform: translate(510px, -410px) scale(.5);
+    }
+    
+    @media (max-width: $bp-tablet) {
+      padding: translate(510px, -410px) scale(.5);
+    }
+
+    @media (max-width: $bp-mobile) {
+      transform: translate(0px, -136px) scale(.225);
+    }
+  }
+
+  &__horse{
+    position: absolute;
+    bottom: 0;
+    z-index: 6;
+    width: auto;
+    height: 218px;
+    transform: translateX(240px);
+
+    @media (max-width: $bp-mobile) {
+      width: auto;
+      height: 121px;
+      transform: translateX(0px);
+    }
+  }
+
+  &__pawn{
+    position: absolute;
+    bottom: 20px;
+    z-index: 6;
+    width: auto;
+    height: 122px;
+    transform: translateX(580px);
+
+    @media (max-width: $bp-mobile) {
+      display: none;
+    }
+  }
+
+  &__king{
+    position: absolute;
+    bottom: 170px;
+    z-index: 3;
+    width: auto;
+    height: 255px;
+    transform: translateX(90px);
+
+    @media (max-width: $bp-laptop) {
+      transform: translateX(190px);
+    }
+
+    @media (max-width: $bp-mobile) {
+      width: auto;
+      height: 116px;
+      transform: translate(-100px, 60px);
+    }
+  }
+
+  &__queen{
+    position: absolute;
+    bottom: 280px;
+    z-index: 3;
+    width: auto;
+    height: 252px;
+    transform: translateX(450px);
+
+    @media (max-width: $bp-mobile) {
+      width: auto;
+      height: 104px;
+      transform: translate(80px, 110px);
+    }
+  }
+}
