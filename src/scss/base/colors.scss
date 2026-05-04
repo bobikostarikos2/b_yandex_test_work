@@ -1,6 +1,7 @@
 :root {
   //Base
   --color-white: #FFFFFF;
+  --color-cool-gray: #313131;
   --color-dark: #1F1F1F;
   --color-blue: #3057A2;
   --color-red: #F54932;
@@ -20,13 +21,17 @@
   --btn-more: var(--color-blue);
   --btn-more-txt: var(--color-white);
 
+  --btn-arrow: var(--color-cool-gray);
+  --btn-arrow-hover: var(--color-yellow);
+
   //Ticker
   --bg-ticker: var(--color-red);
   --txt-ticker: var(--color-white);
 
   //Typography
-  --txt-primary: #313131;
+  --txt-primary: var(--color-cool-gray);
   --txt-secondary: #595653;
+  --txt-extra-bold: #151515;
   --txt-accent: var(--color-red);
   --txt-blue: var(--color-blue);
 }

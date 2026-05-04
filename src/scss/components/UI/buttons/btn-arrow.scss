@@ -8,7 +8,7 @@
   justify-content: center;
   flex-shrink: 0;
   color: var(--btn-default-txt-light);
-  background-color: var(--btn-default);
+  background-color: var(--btn-arrow);
   transition: background-color var(--transition-default);
 
   svg{
@@ -16,7 +16,7 @@
   }
 
   &:hover{
-    background-color: var(--btn-default-hover);
+    background-color: var(--btn-arrow-hover);
   }
 
   &--disabled, &:disabled{

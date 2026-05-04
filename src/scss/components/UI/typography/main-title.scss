@@ -1,0 +1,12 @@
+@use '../../../base/variables' as *;
+
+.main-title{
+  font-size: 5.4rem;
+  font-weight: 400;
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+
+  @media(max-width: $bp-tablet){
+    font-size: 3.6rem;
+  }
+}

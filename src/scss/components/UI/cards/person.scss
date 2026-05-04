@@ -1,0 +1,51 @@
+@use '../../../base/variables' as *;
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__avt {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 0 28px 0;
+  }
+
+  &__name-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 20px 0;
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: 600;
+    color: var(--txt-extra-bold);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 120%;
+
+    @media(max-width: $bp-mobile){
+      font-size: 2.4rem;
+    }
+  }
+
+  &__status {
+    text-align: center;
+    font-weight: 400;
+    color: var(--txt-extra-bold);
+    font-size: clamp(1.4rem, 1.6vw, 2rem);
+    opacity: 0.6;
+    line-height: 120%;
+
+    @media(max-width: $bp-mobile){
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<section class="participants">
+  <div class="participants__box">
+    <h2 class="main-title participants__ttl">Участники турнира</h2>
+    <div class="participants__controls">
+      <button class="btn-arrow participants__arrow" aria-label="Слайд назад" type="button">
+        @@include('html/svg/arrow.html')
+      </button>
+      <div class="participants__counter">
+        <span class="participants__current" data-participants-current>1</span>
+        <span class="participants__total" data-participants-total>6</span>
+      </div>
+      <button class="btn-arrow" aria-label="Слайд вперед" type="button">
+        @@include('html/svg/arrow.html')
+      </button>
+    </div>
+    <div class="participants__slider">
+      <ul class="participants__track">
+        <li class="participants__item" data-participant>
+          @@include('html/components/person.html', {
+            "name": "Хосе-Рауль Капабланка",
+            "photo": "assets/capablanca.webp",
+            "status": "Чемпион мира по шахматам",
+            "link": "#"
+          })
+        </li>
+        <li class="participants__item" data-participant>
+          @@include('html/components/person.html', {
+            "name": "Эммануил Ласкер",
+            "photo": "assets/capablanca.webp",
+            "status": "Чемпион мира по шахматам",
+            "link": "#"
+          })
+        </li>
+        <li class="participants__item" data-participant>
+          @@include('html/components/person.html', {
+            "name": "Александр Алехин",
+            "photo": "assets/capablanca.webp",
+            "status": "Чемпион мира по шахматам",
+            "link": "#"
+          })
+        </li>
+        <li class="participants__item" data-participant>
+          @@include('html/components/person.html', {
+            "name": "Арон Нимцович",
+            "photo": "assets/capablanca.webp",
+            "status": "Чемпион мира по шахматам",
+            "link": "#"
+          })
+        </li>
+        <li class="participants__item" data-participant>
+          @@include('html/components/person.html', {
+            "name": "Рихард Рети",
+            "photo": "assets/capablanca.webp",
+            "status": "Чемпион мира по шахматам",
+            "link": "#"
+          })
+        </li>
+        <li class="participants__item" data-participant>
+          @@include('html/components/person.html', {
+            "name": "Остап Бендер",
+            "photo": "assets/capablanca.webp",
+            "status": "Гроссмейстер",
+            "link": "#"
+          })
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
