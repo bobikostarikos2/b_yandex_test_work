@@ -3,21 +3,23 @@
 .lecture {
   display: flex;
   justify-content: center;
-  padding: 80px var(--global-padding) 64px var(--global-padding);
+  padding: 80px var(--global-padding) 0 var(--global-padding);
+  margin: 0 0 64px 0;
   background-color: var(--bg-body);
   z-index: 2;
   position: relative;
 
   @media(max-width: $bp-laptop){
-    padding: 48px var(--global-padding-laptop) 34px var(--global-padding-laptop);
+    padding: 48px var(--global-padding-laptop) 0 var(--global-padding-laptop);
   }
 
   @media (max-width: $bp-tablet) {
-    padding: 48px var(--global-padding-tablet) 34px var(--global-padding-tablet);
+    margin: 0 0 34px 0;
+    padding: 48px var(--global-padding-tablet) 0 var(--global-padding-tablet);
   }
 
   @media (max-width: $bp-mobile) {
-    padding: 48px var(--global-padding-mobile) 34px var(--global-padding-mobile);
+    padding: 48px var(--global-padding-mobile) 0 var(--global-padding-mobile);
   }
 
   &__box {
@@ -57,8 +59,6 @@
     display: inline;
 
     @media (max-width: $bp-tablet) {
-      font-size: clamp(2.4rem, 3.8vw, 3.6rem);
-
       &[data-lecture-part="1"] {
         align-self: start;
         grid-column: 1 / 2;
@@ -76,7 +76,6 @@
       hyphens: manual;
       overflow-wrap: normal;
       word-break: normal;
-      font-size: 2.8rem;
 
       &[data-lecture-part="1"] {
         grid-column: 1 / 2;

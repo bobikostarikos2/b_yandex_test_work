@@ -21,17 +21,6 @@ const CarouselUtils = (() => {
     container.style.setProperty('--carousel-gap', `${gap * (visibleCount - 1)}px`)
   }
 
-  const throttle = (fn, delay) => {
-    let lastCall = 0
-    return (...args) => {
-      const now = Date.now()
-      if (now - lastCall >= delay) {
-        lastCall = now
-        fn(...args)
-      }
-    }
-  }
-
-  return { getVisibleCount, getCardWidth, moveTrack, updateCSSVars, throttle }
+  return { getVisibleCount, getCardWidth, moveTrack, updateCSSVars }
 
 })()

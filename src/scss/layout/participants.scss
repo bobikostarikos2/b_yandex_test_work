@@ -4,18 +4,20 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 200px var(--global-padding) 140px var(--global-padding);
+  padding: 0 var(--global-padding) 0 var(--global-padding);
+  margin: 0 0 140px 0;
 
   @media(max-width: $bp-laptop) {
-    padding: 150px var(--global-padding-laptop) 120px var(--global-padding-laptop);
+    padding: 0 var(--global-padding-laptop) 0 var(--global-padding-laptop);
   }
 
   @media (max-width: $bp-tablet) {
-    padding: 120px var(--global-padding-tablet) 100px var(--global-padding-tablet);
+    margin: 0 0 100px 0;
+    padding: 0 var(--global-padding-tablet) 0 var(--global-padding-tablet);
   }
 
   @media (max-width: $bp-mobile) {
-    padding: 120px var(--global-padding-mobile) 100px var(--global-padding-mobile);
+    padding: 0 var(--global-padding-mobile) 0 var(--global-padding-mobile);
   }
 
   &__box {

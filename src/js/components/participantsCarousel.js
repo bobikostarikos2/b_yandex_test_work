@@ -12,6 +12,13 @@ const ParticipantsCarousel = (() => {
   let autoPlayTimer = null
   let isAnimating = false
 
+  let btnPrevHandler = null
+  let btnNextHandler = null
+  let mouseEnterHandler = null
+  let mouseLeaveHandler = null
+  let transitionEndHandler = null
+  let resizeHandler = null
+
   // ─── Layout ───────────────────────────────────────────────
 
   const updateLayout = () => {
@@ -101,17 +108,49 @@ const ParticipantsCarousel = (() => {
   const stopAutoPlay   = () => { clearInterval(autoPlayTimer) }
   const restartAutoPlay = () => { stopAutoPlay(); startAutoPlay() }
 
+  // ─── Destroy ──────────────────────────────────────────────
+
+  const destroy = () => {
+    stopAutoPlay()
+    isAnimating = false
+
+    track.querySelectorAll('[data-clone]').forEach(el => el.remove())
+
+    if (transitionEndHandler) {
+      track.removeEventListener('transitionend', transitionEndHandler)
+      transitionEndHandler = null
+    }
+
+    const box = slider.closest('.participants__box')
+    const [btnPrev, btnNext] = box.querySelectorAll('.btn-arrow')
+
+    if (btnPrevHandler) {
+      btnPrev?.removeEventListener('click', btnPrevHandler)
+      btnPrevHandler = null
+    }
+    if (btnNextHandler) {
+      btnNext?.removeEventListener('click', btnNextHandler)
+      btnNextHandler = null
+    }
+    if (mouseEnterHandler) {
+      slider.removeEventListener('mouseenter', mouseEnterHandler)
+      mouseEnterHandler = null
+    }
+    if (mouseLeaveHandler) {
+      slider.removeEventListener('mouseleave', mouseLeaveHandler)
+      mouseLeaveHandler = null
+    }
+    if (resizeHandler) {
+      window.removeEventListener('resize', resizeHandler)
+      resizeHandler = null
+    }
+  }
+
   // ─── Reset (ресайз) ───────────────────────────────────────
 
   const reset = () => {
-    stopAutoPlay()
-    isAnimating = false
-    updateLayout()
-    setupClones()
-    currentIndex = 0
-    moveTo(toTrackIndex(currentIndex))
-    updateCounter()
-    startAutoPlay()
+    destroy()
+    init('.participants__slider')
   }
 
   // ─── Init ─────────────────────────────────────────────────
@@ -132,12 +171,19 @@ const ParticipantsCarousel = (() => {
     moveTo(toTrackIndex(currentIndex))
     updateCounter()
 
-    track.addEventListener('transitionend', onTransitionEnd)
-    btnPrev?.addEventListener('click', () => navigate(-1))
-    btnNext?.addEventListener('click', () => navigate(1))
-    slider.addEventListener('mouseenter', stopAutoPlay)
-    slider.addEventListener('mouseleave', startAutoPlay)
-    window.addEventListener('resize', CarouselUtils.throttle(reset, 100))
+    transitionEndHandler = onTransitionEnd
+    btnPrevHandler       = () => navigate(-1)
+    btnNextHandler       = () => navigate(1)
+    mouseEnterHandler    = stopAutoPlay
+    mouseLeaveHandler    = startAutoPlay
+    resizeHandler        = throttle(reset, 100)
+
+    track.addEventListener('transitionend', transitionEndHandler)
+    btnPrev?.addEventListener('click', btnPrevHandler)
+    btnNext?.addEventListener('click', btnNextHandler)
+    slider.addEventListener('mouseenter', mouseEnterHandler)
+    slider.addEventListener('mouseleave', mouseLeaveHandler)
+    window.addEventListener('resize', resizeHandler)
 
     startAutoPlay()
   }

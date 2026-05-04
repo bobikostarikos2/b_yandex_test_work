@@ -1,3 +1,5 @@
+@use '../../../base/variables' as *;
+
 .text-heading {
   font-family: var(--font-secondary);
   font-size: clamp(2.8rem, 2.7vw, 3.6rem);
@@ -5,6 +7,14 @@
   font-weight: 500;
   text-transform: uppercase;
   color: var(--txt-primary);
+
+  @media (max-width: $bp-tablet) {
+    font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+  }
+
+  @media (max-width: $bp-mobile) {
+    font-size: 2.8rem;
+  }
 
   &__accent{
     color: var(--txt-accent);
